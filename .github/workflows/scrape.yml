@@ -1,9 +1,12 @@
 name: FXStreet Scraper Every 30 Minutes
 
 on:
-  schedule:
-    - cron: "*/30 * * * *" # každých 30 minut
+  push:
+    branches:
+      - main
   workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"  # každých 30 minut
 
 jobs:
   scrape:
