@@ -3,7 +3,7 @@ name: FXStreet Scraper Every 30 Minutes
 on:
   schedule:
     - cron: '*/30 * * * *'  # každých 30 minut
-  workflow_dispatch:        # možnost ručního spuštění z GitHubu
+  workflow_dispatch:        # ruční spuštění
 
 jobs:
   scrape:
@@ -13,14 +13,8 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
-
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
         pip install -r requirements.txt
         playwright install --with-deps
 
