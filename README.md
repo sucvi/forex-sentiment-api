@@ -1,1 +1,1 @@
-![Scraper](https://github.com/tvuj-username/tvuj-repo/actions/workflows/scrape.yml/badge.svg)
+![Scraper](https://github.com/sucvi/forex-sentiment-api/actions/workflows/scrape.yml/badge.svg)
