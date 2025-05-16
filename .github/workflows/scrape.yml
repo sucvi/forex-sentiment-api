@@ -26,7 +26,7 @@ jobs:
         python scraper_fxstreet_playwright.py
 
     - name: Upload output as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-Artifact@v3
       with:
         name: sentiment-data
         path: sentiment_data.json
