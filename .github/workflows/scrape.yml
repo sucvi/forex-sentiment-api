@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
   schedule:
-    - cron: "*/30 * * * *"  # každých 30 minut
+    - cron: "*/30 * * * *" # každých 30 minut
+  workflow_dispatch:
 
 jobs:
   scrape:
@@ -22,10 +22,9 @@ jobs:
           playwright install --with-deps
 
       - name: Run scraper
-        run: |
-          python scraper_fxstreet_playwright.py
+        run: python scraper_fxstreet_playwright.py
 
-      - name: Upload output as artifact
+      - name: Upload output
         uses: actions/upload-artifact@v3
         with:
           name: sentiment-data
