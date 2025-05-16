@@ -2,8 +2,11 @@ name: FXStreet Scraper Every 30 Minutes
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # každých 30 minut
-  workflow_dispatch:        # ruční spuštění
+    - cron: '*/30 * * * *'   # každých 30 minut
+  workflow_dispatch:         # ruční spuštění
+  push:
+    branches:
+      - main
 
 jobs:
   scrape:
