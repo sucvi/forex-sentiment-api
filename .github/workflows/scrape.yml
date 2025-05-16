@@ -1,11 +1,8 @@
 name: FXStreet Scraper Every 30 Minutes
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: "*/30 * * * *" # každých 30 minut
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -13,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/upload-artifact@v2.3.1
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
@@ -22,10 +19,5 @@ jobs:
           playwright install --with-deps
 
       - name: Run scraper
-        run: python scraper_fxstreet_playwright.py
-
-      - name: Upload output
-        uses: actions/upload-artifact@v2.3.1
-        with:
-          name: sentiment-data
-          path: sentiment_data.json
+        run: |
+          python scraper_fxstreet_playwright.py
